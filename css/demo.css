@@ -9,31 +9,49 @@
 		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
 }
 
-*, *:after, *:before { border-box; box-sizing: border-box; }
-.clearfix:before, .clearfix:after { content: ''; display: table; }
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table; content: ''; }
 .clearfix:after { clear: both; }
 
 body {
-	background: #f6f9fa;
-	color: #536d76;
+	background: #2f3238;
+	color: #fff;
 	font-weight: 400;
 	font-size: 1em;
 	font-family: 'Raleway', Arial, sans-serif;
 }
 
 a {
-	color: #4f7f90;
-	text-decoration: none;
 	outline: none;
+	color: #3498db;
+	text-decoration: none;
 }
 
 a:hover, a:focus {
-	color: #39545e;
+	color: #528cb3;
 }
 
 section {
 	padding: 1em;
 	text-align: center;
+}
+
+.content {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.content > h2 {
+	clear: both;
+	margin: 0;
+	padding: 4em 1% 0;
+	color: #484B54;
+	font-weight: 800;
+	font-size: 1.5em;
+}
+
+.content > h2:first-child {
+	padding-top: 0em;
 }
 
 /* Header */
@@ -53,22 +71,49 @@ section {
 .codrops-header h1 span {
 	display: block;
 	padding: 0 0 0.6em 0.1em;
-	font-size: 45%;
+	color: #74777b;
 	font-weight: 300;
-	color: #7e959d;
+	font-size: 45%;
+}
+
+/* Demo links */
+.codrops-demos {
+	clear: both;
+	padding: 1em 0 0;
+	text-align: center;
+}
+
+.content + .codrops-demos {
+	padding-top: 5em;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	margin: 0 5px;
+	padding: 1em 1.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a:focus,
+.codrops-demos a.current-demo {
+	background: #3c414a;
+	color: #fff;
 }
 
 /* To Navigation Style */
 .codrops-top {
 	width: 100%;
 	text-transform: uppercase;
+	font-weight: 800;
 	font-size: 0.69em;
 	line-height: 2.2;
 }
 
 .codrops-top a {
 	display: inline-block;
-	padding: 0 1em;
+	padding: 1em 2em;
 	text-decoration: none;
 	letter-spacing: 1px;
 }
@@ -104,16 +149,17 @@ section {
 
 /* Related demos */
 .related {
+	clear: both;
 	padding: 6em 1em;
 	font-size: 120%;
 }
 
 .related > a {
-	border: 1px solid #4f7f90;
 	display: inline-block;
-	text-align: center;
 	margin: 20px 10px;
 	padding: 25px;
+	border: 1px solid #4f7f90;
+	text-align: center;
 }
 
 .related a:hover {
@@ -138,13 +184,10 @@ section {
 }
 
 @media screen and (max-width: 25em) {
-
 	.codrops-header {
 		font-size: 75%;
 	}
-
 	.codrops-icon span {
 		display: none;
 	}
-
 }

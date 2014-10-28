@@ -10,10 +10,10 @@
 }
 
 .grid {
-	overflow: hidden;
-	margin: 0;
-	padding: 3em 0 0 0;
-	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 1em 0 4em;
+	max-width: 1000px;
 	list-style: none;
 	text-align: center;
 }
@@ -21,12 +21,13 @@
 /* Common style */
 .grid figure {
 	position: relative;
-	z-index: 1;
-	display: inline-block;
+	float: left;
 	overflow: hidden;
-	margin: -0.135em;
-	width: 33.333%;
-	height: 400px;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
@@ -36,6 +37,7 @@
 	position: relative;
 	display: block;
 	min-height: 100%;
+	max-width: 100%;
 	opacity: 0.8;
 }
 
@@ -54,7 +56,7 @@
 }
 
 .grid figure figcaption,
-.grid figure a {
+.grid figure figcaption > a {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -64,7 +66,7 @@
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-.grid figure a {
+.grid figure figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
 	white-space: nowrap;
@@ -74,7 +76,6 @@
 
 .grid figure h2 {
 	word-spacing: -0.15em;
-	
 	font-weight: 300;
 }
 
@@ -99,6 +100,7 @@
 /*---------------*/
 
 figure.effect-lily img {
+	max-width: none;
 	width: -webkit-calc(100% + 50px);
 	width: calc(100% + 50px);
 	opacity: 0.7;
@@ -109,10 +111,16 @@ figure.effect-lily img {
 }
 
 figure.effect-lily figcaption {
-	top: auto;
-	bottom: 0;
-	height: 50%;
 	text-align: left;
+}
+
+figure.effect-lily figcaption > div {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 2em;
+	width: 100%;
+	height: 50%;
 }
 
 figure.effect-lily h2,
@@ -127,7 +135,7 @@ figure.effect-lily h2 {
 }
 
 figure.effect-lily p {
-	color: rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.8);
 	opacity: 0;
 	-webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
 	transition: opacity 0.2s, transform 0.35s;
@@ -222,6 +230,7 @@ figure.effect-roxy {
 }
 
 figure.effect-roxy img {
+	max-width: none;
 	width: -webkit-calc(100% + 60px);
 	width: calc(100% + 60px);
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -440,9 +449,7 @@ figure.effect-layla {
 }
 
 figure.effect-layla img {
-	min-width: 100%;
-	height: -webkit-calc(100% + 40px);
-	height: calc(100% + 40px);
+	height: 390px;
 }
 
 figure.effect-layla figcaption {
@@ -795,6 +802,7 @@ figure.effect-milo {
 }
 
 figure.effect-milo img {
+	max-width: none;
 	width: -webkit-calc(100% + 60px);
 	width: calc(100% + 60px);
 	opacity: 1;
@@ -907,6 +915,7 @@ figure.effect-sarah {
 }
 
 figure.effect-sarah img {
+	max-width: none;
 	width: -webkit-calc(100% + 20px);
 	width: calc(100% + 20px);
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -988,11 +997,18 @@ figure.effect-zoe h2 {
 	float: left;
 }
 
-figure.effect-zoe figcaption > span {
+figure.effect-zoe p.icon-links a {
 	float: right;
+	color: #3c4a50;
+	font-size: 1.4em;
 }
 
-figure.effect-zoe p {
+figure.effect-zoe:hover p.icon-links a:hover,
+figure.effect-zoe:hover p.icon-links a:focus {
+	color: #252d31;
+}
+
+figure.effect-zoe p.description {
 	position: absolute;
 	bottom: 8em;
 	padding: 2em;
@@ -1002,17 +1018,18 @@ figure.effect-zoe p {
 	opacity: 0;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
+	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
 }
 
 figure.effect-zoe h2,
-figure.effect-zoe figcaption > span {
+figure.effect-zoe p.icon-links a {
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0,200%,0);
 	transform: translate3d(0,200%,0);
 }
 
-figure.effect-zoe figcaption > span::before {
+figure.effect-zoe p.icon-links a span::before {
 	display: inline-block;
 	padding: 8px 10px;
 	font-family: 'feathericons';
@@ -1037,13 +1054,13 @@ figure.effect-zoe h2 {
 	display: inline-block;
 }
 
-figure.effect-zoe:hover p {
+figure.effect-zoe:hover p.description {
 	opacity: 1;
 }
 
 figure.effect-zoe:hover figcaption,
 figure.effect-zoe:hover h2,
-figure.effect-zoe:hover figcaption > span {
+figure.effect-zoe:hover p.icon-links a {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
@@ -1053,17 +1070,17 @@ figure.effect-zoe:hover h2 {
 	transition-delay: 0.05s;
 }
 
-figure.effect-zoe:hover figcaption > span:nth-child(4) {
+figure.effect-zoe:hover p.icon-links a:nth-child(3) {
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
 
-figure.effect-zoe:hover figcaption > span:nth-child(3) {
+figure.effect-zoe:hover p.icon-links a:nth-child(2) {
 	-webkit-transition-delay: 0.15s;
 	transition-delay: 0.15s;
 }
 
-figure.effect-zoe:hover figcaption > span:nth-child(2) {
+figure.effect-zoe:hover p.icon-links a:first-child {
 	-webkit-transition-delay: 0.2s;
 	transition-delay: 0.2s;
 }
@@ -1126,20 +1143,15 @@ figure.effect-chico:hover p {
 	transform: scale(1);
 }
 
-@media screen and (max-width: 69.5em) {
-	.grid figure {
-		width: 50%;
-	}	
-
-	.grid figure figcaption {
-		font-size: 90%;
+@media screen and (max-width: 50em) {
+	.content {
+		padding: 0 10px;
+		text-align: center;
 	}
-}
-
-
-@media screen and (max-width: 41.5em) {
-
 	.grid figure {
+		display: inline-block;
+		float: none;
+		margin: 10px auto;
 		width: 100%;
 	}
 }

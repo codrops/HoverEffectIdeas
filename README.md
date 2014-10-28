@@ -7,7 +7,8 @@ Some inspiration and modern ideas for subtle hover effects.
 
 [Demo](http://tympanus.net/Development/HoverEffectIdeas/)
 
-Images by [Unsplash](http://unsplash.com/). [Feather Icons](https://gumroad.com/l/feather) by Cole Bemis.
+Images by [Unsplash](http://unsplash.com/). [Feather Icons](https://gumroad.com/l/feather) by Cole Bemis. 
+[Font Awesome Icon Font] (http://fortawesome.github.io/Font-Awesome/) created by Dave Gandy.
 
 Integrate or build upon it for free in your personal or commercial projects. Don't republish, redistribute or sell "as-is". 
 
