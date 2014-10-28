@@ -10,11 +10,7 @@
 }
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
-<<<<<<< HEAD
 .clearfix:before, .clearfix:after { display: table; content: ''; }
-=======
-.clearfix:before, .clearfix:after { content: ''; display: table; }
->>>>>>> ae2237965c39e006ac178b7460ebacc427487228
 .clearfix:after { clear: both; }
 
 body {
@@ -194,9 +190,4 @@ section {
 	.codrops-icon span {
 		display: none;
 	}
-<<<<<<< HEAD
 }
-=======
-
-}
->>>>>>> ae2237965c39e006ac178b7460ebacc427487228
