@@ -1016,6 +1016,7 @@ figure.effect-zoe p.description {
 	text-transform: none;
 	font-size: 90%;
 	opacity: 0;
+	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
