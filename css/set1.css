@@ -65,7 +65,6 @@
 }
 
 /* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
 .grid figure figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
@@ -1145,10 +1144,6 @@ figure.effect-chico:hover p {
 }
 
 @media screen and (max-width: 50em) {
-	.content {
-		padding: 0 10px;
-		text-align: center;
-	}
 	.grid figure {
 		display: inline-block;
 		float: none;

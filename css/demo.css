@@ -190,4 +190,8 @@ section {
 	.codrops-icon span {
 		display: none;
 	}
+	.content {
+		padding: 0 10px;
+		text-align: center;
+	}
 }
