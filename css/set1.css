@@ -364,22 +364,17 @@ figure.effect-bubba:hover p {
 /***** Romeo *****/
 /*---------------*/
 
-figure.effect-romeo {
-	-webkit-perspective: 1000px;
-	perspective: 1000px;
-}
-
 figure.effect-romeo img {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(0,0,300px);
-	transform: translate3d(0,0,300px);
+	-webkit-transform: scale3d(1.4,1.4,1);
+	transform: scale3d(1.4,1.4,1);
 }
 
 figure.effect-romeo:hover img {
 	opacity: 0.6;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+	-webkit-transform: scale3d(1,1,1);
+	transform: translate3d(1,1,1);
 }
 
 figure.effect-romeo figcaption::before,
