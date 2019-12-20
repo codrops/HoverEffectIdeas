@@ -103,7 +103,7 @@
 
 figure.effect-rosy img {
   max-width: none;
-  width: -webkit-calc(100% + 50px);
+  width: -webkit-calc(100% + 10px);
   width: calc(100% + 50px);
   opacity: 0.7;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
